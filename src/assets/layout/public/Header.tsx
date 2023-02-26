@@ -3,6 +3,8 @@ import React, { useState } from "react";
 export const Header = () => {
   /*State for show the submenu when the pointer is over*/
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  /*State for show the submenu plans when the pointer is over*/
+  const [isPlans, setPlans] = useState(false);
 
   return (
     <header>
@@ -27,8 +29,20 @@ export const Header = () => {
               </ul>
             )}
           </li>
-          <li>
+          <li
+            className="dropdown-option"
+            onMouseEnter={() => setPlans(true)}
+            onMouseLeave={() => setPlans(false)}
+          >
             <a href="/plans">Planes</a>
+            {/* this only shows if the state is true */}
+            {isPlans && (
+              <ul className="dropdown-submenu">
+                <a href="">Básico</a>
+                <a href="">Intermedio</a>
+                <a href="">Premium</a>
+              </ul>
+            )}
           </li>
           <li>
             <a href="/about-me">Conóceme</a>

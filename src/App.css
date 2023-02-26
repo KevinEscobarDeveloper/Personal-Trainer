@@ -11,6 +11,7 @@ body {
   width: 100%;
   height: 100%;
 }
+
 header {
   width: 100%;
 }
@@ -29,6 +30,7 @@ nav {
 li {
   margin-right: 30px;
 }
+
 /*last child have diferent margin-right, ingresar*/
 li:last-child {
   margin-right: 20px;
@@ -36,12 +38,30 @@ li:last-child {
 
 /* Style of the a tag*/
 header a {
-  color: #333;
   text-decoration: none;
   font-size: 30px;
   font-weight: 400;
   font-family: Tahoma, sans-serif;
   text-transform: uppercase;
+  --b: 0.1em;
+  /* the thickness of the line */
+  --c: #1095c1;
+  /* the color */
+
+  color: #0000;
+  padding-block: var(--b);
+  background:
+    linear-gradient(var(--c) 50%, #000 0) 0% calc(100% - var(--_p, 0%))/100% 200%,
+    linear-gradient(var(--c) 0 0) 0% var(--_p, 0%)/var(--_p, 0%) var(--b) no-repeat;
+  -webkit-background-clip: text, padding-box;
+  background-clip: text, padding-box;
+  transition: .3s var(--_s, 0s) linear, background-size .3s calc(.3s - var(--_s, 0s));
+}
+
+/* color is more low when the pointer is hover */
+header a:hover {
+  --_p: 100%;
+  --_s: .3s;
 }
 
 /* style for the dropdown ul Inicio, acerca de...*/
@@ -61,7 +81,7 @@ header a {
 /* structure for the dropdown-submeno when the pointer is in acerca de or planes*/
 .dropdown-submenu {
   display: flex;
-  flex-direction: column  ;
+  flex-direction: column;
   background-color: #fff;
   border: 1px solid #ccc;
   list-style: none;
@@ -70,24 +90,38 @@ header a {
   position: absolute;
   top: 100%;
   left: 0;
-  width: 100%;
+  width: 110%;
 }
 
 /* design for a tag of the submenu*/
-.dropdown-submenu a{
+.dropdown-submenu a {
   font-size: 18px;
   font-weight: 200;
   margin-bottom: 20px;
-}
-/* design for a tag of the submenu when the pointer is hover*/
-.dropdown-submenu a:hover{
-  font-size: 18px;
-  font-weight: 200;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-/* exception for the last-chield of the submenu tag*/
-.dropdown-submenu a:last-child{
-  margin-bottom: 0px;
+  --s: 0.1em;
+  /* the thickness of the line */
+  --c: #1095c1;
+  /* the color */
+
+  color: #0000;
+  padding-bottom: var(--s);
+  background:
+    linear-gradient(90deg, var(--c) 50%, #000 0) calc(100% - var(--_p, 0%))/200% 100%,
+    linear-gradient(var(--c) 0 0) 0% 100%/var(--_p, 0%) var(--s) no-repeat;
+  -webkit-background-clip: text, padding-box;
+  background-clip: text, padding-box;
+  transition: 0.5s;
 }
 
+/* design for a tag of the submenu when the pointer is hover*/
+.dropdown-submenu a:hover {
+  font-size: 18px;
+  font-weight: 200;
+  color: #0000;
+  --_p: 100%
+}
+
+/* exception for the last-chield of the submenu tag*/
+.dropdown-submenu a:last-child {
+  margin-bottom: 0px;
+}
