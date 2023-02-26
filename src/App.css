@@ -1,42 +1,93 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+header {
+  width: 100%;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Create the structure for the nav header section */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 20px auto;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Margin for the style inicio, acerca de...*/
+li {
+  margin-right: 30px;
+}
+/*last child have diferent margin-right, ingresar*/
+li:last-child {
+  margin-right: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Style of the a tag*/
+header a {
+  color: #333;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 400;
+  font-family: Tahoma, sans-serif;
+  text-transform: uppercase;
 }
 
-.card {
-  padding: 2em;
+/* style for the dropdown ul Inicio, acerca de...*/
+.dropdown {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.read-the-docs {
-  color: #888;
+/*style for the dropdown option, ACERCA DE*/
+.dropdown-option {
+  cursor: pointer;
+  position: relative;
 }
+
+/* structure for the dropdown-submeno when the pointer is in acerca de or planes*/
+.dropdown-submenu {
+  display: flex;
+  flex-direction: column  ;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+/* design for a tag of the submenu*/
+.dropdown-submenu a{
+  font-size: 18px;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+/* design for a tag of the submenu when the pointer is hover*/
+.dropdown-submenu a:hover{
+  font-size: 18px;
+  font-weight: 200;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* exception for the last-chield of the submenu tag*/
+.dropdown-submenu a:last-child{
+  margin-bottom: 0px;
+}
+
