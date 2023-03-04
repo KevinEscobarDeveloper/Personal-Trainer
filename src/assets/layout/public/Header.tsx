@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export const Header = () => {
   /*State for show the submenu when the pointer is over*/
@@ -7,11 +8,11 @@ export const Header = () => {
   const [isPlans, setPlans] = useState(false);
 
   return (
-    <header>
-      <nav>
+    <header className="d-flex justify-content-center">
+      <nav className="container">
         <ul className="dropdown">
           <li>
-            <a href="/about">Inicio</a>
+            <NavLink to={"/inicio"}>Inicio</NavLink>
           </li>
           <li
             className="dropdown-option"

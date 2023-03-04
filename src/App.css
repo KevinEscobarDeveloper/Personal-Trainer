@@ -1,3 +1,7 @@
+body > #root {
+  height: 100vh;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -39,7 +43,7 @@ li:last-child {
 /* Style of the a tag*/
 header a {
   text-decoration: none;
-  font-size: 30px;
+  font-size: clamp(0.5rem, 2.5vw, 2rem);
   font-weight: 400;
   font-family: Tahoma, sans-serif;
   text-transform: uppercase;
@@ -63,6 +67,7 @@ header a:hover {
   --_p: 100%;
   --_s: .3s;
 }
+
 
 /* style for the dropdown ul Inicio, acerca de...*/
 .dropdown {
@@ -124,4 +129,36 @@ header a:hover {
 /* exception for the last-chield of the submenu tag*/
 .dropdown-submenu a:last-child {
   margin-bottom: 0px;
+}
+
+.col> img{
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+}
+.d-inline-flex{
+  gap:20px;
+}
+
+.col> img:hover{
+  cursor: pointer;
+}
+
+.col-sm >a {
+  font-size: 16px; /* sets the font size to 16 pixels */
+  color: #333; /* sets the font color to a dark gray */
+  font-weight: bold; /* makes the text bold */
+  text-decoration: none; /* removes any underline or strikethrough */
+  padding: 8px 12px; /* adds padding of 8 pixels on the top and bottom, and 12 pixels on the left and right */
+  border-radius: 4px; /* rounds the corners of the tag */
+  background-color: #eee; /* sets the background color to a light gray */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* adds a subtle shadow to the tag */
+  transition: background-color 0.2s ease-in-out; /* adds a smooth transition effect when the background color changes */
+  margin: 400px 0 20px 0;
+}
+
+
+.col-sm >a:hover {
+  background-color: #ccc; /* sets the background color to a darker gray when the tag is hovered over */
 }
