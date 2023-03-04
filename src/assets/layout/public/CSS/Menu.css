@@ -1,0 +1,48 @@
+.main-button {
+    max-width: 100%;
+    background-color: black;
+    color: white;
+    position: relative;
+    border: none;
+    padding: 10px 24px;
+  }
+
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65%;
+}
+  
+  .main-button:hover::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #f30d0d; /* Set your desired color */
+    transition: all 0.3s ease-in-out;
+    animation: line-animation 2s infinite; /* Add animation */
+  }
+  
+  @keyframes line-animation {
+    0% {
+      width: 0%;
+    }
+    50% {
+      width: 100%;
+    }
+    100% {
+      width: 0%;
+    }
+  }
+  
+  .main-button:hover {
+    background-color: black;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 10%;
+  }
+  
+  
